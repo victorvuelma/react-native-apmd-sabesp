@@ -9,6 +9,8 @@ import { System } from "../../model/System";
 import { SystemParam } from "../../model/SystemParam";
 import {
   Header,
+  HeaderButton,
+  HeaderButtonLabel,
   HeaderReportTitle,
   HeaderTitle,
 } from "../../components/common/Header";
@@ -80,8 +82,14 @@ export function Detail({ navigation }: NavigationProps) {
                 bottom: 0,
               }}
             />
+            <HeaderButton onPress={() => handleBack()}>
+              <HeaderButtonLabel>Início</HeaderButtonLabel>
+            </HeaderButton>
+
             <SabespAsset></SabespAsset>
+
             <HeaderTitle>{system.name}</HeaderTitle>
+
             <HeaderReportTitle>
               Qualidade da Água Distribuída por Sistema de Abastecimento
             </HeaderReportTitle>
@@ -165,7 +173,7 @@ export function ParamGroup({
   });
 
   return (
-    <ParamGroupCard>
+    <ParamGroupCard active={viewDetails}>
       <ParamGroupHead>
         <ParamGroupTitle>{paramTitle}</ParamGroupTitle>
         <ParamGroupPercent>{percent}</ParamGroupPercent>

@@ -15,7 +15,7 @@ export const VerticalList = styled(
 `;
 
 export const ParamCard = styled.View`
-  margin: 0px 8px 16px;
+  margin: 0px 16px 16px;
   padding: 8px;
   background: ${({ theme }) => theme.color.heading};
   border-radius: 16px;
@@ -25,7 +25,7 @@ export const ParamTitle = styled.Text`
   width: 100%;
   text-align: center;
   font-family: ${({ theme }) => theme.font.bold};
-  font-size: 16px;
+  font-size: 20px;
   color: ${({ theme }) => theme.color.primary};
 `;
 
@@ -37,14 +37,18 @@ export const ParamContent = styled.View`
 `;
 
 export const ParamDetailsToggle = styled.View`
-  width: 10%;
+  flex: 1;
+  margin: 8px 0;
+  min-width: 24px;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 
 export const ParamGroupCard = styled.View`
   padding: 8px;
   background: ${({ theme }) => theme.color.background};
   border-radius: 8px;
-  width: 49%;
+  width: ${(props) => (props.active ? "100%" : "49%")};
   margin: 8px 0 0;
 `;
 
@@ -63,7 +67,7 @@ export const ParamGroupTitle = styled.Text`
 export const ParamGroupPercent = styled.Text`
   color: ${({ theme }) => theme.color.secondary};
   font-family: ${({ theme }) => theme.font.bold};
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 export const ParamGroupDetails = styled.View`
@@ -78,7 +82,7 @@ export const ParamGroupDetailItem = styled.View``;
 export const ParamGroupDetailTitle = styled.Text`
   color: ${({ theme }) => theme.color.black};
   font-family: ${({ theme }) => theme.font.light};
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 `;
 
